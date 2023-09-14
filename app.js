@@ -18,9 +18,11 @@ app.set('views', [
     path.join(__dirname, './views/feed')
 ]);
 
-// Routes const userRouter = require('./routes/userRoutes.js');
+// Routes 
+const mainRouter = require('./routes/mainRoutes.js');
 
-// Use routes // app.use('/user', userRouter);
+// Use routes // 
+app.use('/', mainRouter);
 
 app.use((req, res, next) => {
     res.status(404).render("./not-found")
